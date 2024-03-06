@@ -1,0 +1,72 @@
+{
+  "Airway": [
+    {
+      "label": "Cell Type",
+      "value": "cell_type"
+    },
+    {
+      "label": "Donor ID",
+      "value": "donor_ID"
+    },
+    {
+      "label": "Gender",
+      "value": "donor_gender"
+    },
+    {
+      "label": "Age",
+      "value": "donor_age"
+    },
+    {
+      "label": "Donor Status",
+      "value": "donor_status"
+    },
+    {
+      "label": "Region",
+      "value": "region"
+    },
+    {
+      "label": "Organ",
+      "value": "organ"
+    },
+    {
+      "label": "Sequencing Technology",
+      "value": "seq_tech"
+    },
+    {
+      "label": "Sequencing Methods",
+      "value": "seq_method"
+    },
+    {
+      "label": "Project Code",
+      "value": "project_code"
+    },
+    {
+      "label": "Sample",
+      "value": "sample_ID"
+    },
+    {
+      "label": "Level 1",
+      "value": "level_1"
+    },
+    {
+      "label": "Level 2",
+      "value": "level_2"
+    },
+    {
+      "label": "Level 3",
+      "value": "level_3"
+    },
+    {
+      "label": "Level 4",
+      "value": "level_4"
+    },
+    {
+      "label": "Level 5",
+      "value": "level_5"
+    },
+    {
+      "label": "Study",
+      "value": "study_new"
+    }
+  ]
+}
