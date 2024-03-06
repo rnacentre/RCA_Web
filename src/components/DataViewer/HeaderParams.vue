@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import regionOptions from "../../../mock/BCAWebJson/json/atlas_region.json"
+import regionOptions from "../../../mock/json/atlas_region.json"
 export default {
   name: "HeaderParams",
   props:{
@@ -66,30 +66,14 @@ export default {
   data(){
     return{
       form: {
-        atlas: 'Adult',
+        atlas: 'Airway',
         region: 'all',
       },
       altasOptionsData:[
         {
-          "label": "Adult",
-          "value": "Adult"
+          "label": "Airway",
+          "value": "Airway"
         },
-        {
-          "label": "Fetal",
-          "value": "Fetal"
-        },
-        {
-          "label": "Tumour",
-          "value": "Tumour"
-        },
-        {
-          "label": "Organoid",
-          "value": "Organoid"
-        },
-        {
-          "label": "Mouse",
-          "value": "Mouse"
-        }
       ],
       regionOptionsData:[],
     }
@@ -105,7 +89,7 @@ export default {
     }
   },
   mounted(){
-    this.changeAtlas('Adult')
+    this.changeAtlas('Airway')
   }
 }
 </script>

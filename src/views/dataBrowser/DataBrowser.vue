@@ -72,7 +72,7 @@
 import Plotly from 'plotly.js-dist-min'
 import HeaderParams from "@/components/DataViewer/HeaderParams";
 import { chartColor } from "../../../mock/chartcolor"
-import color_keys from "../../../mock/BCAWebJson/json/color_keys.json"
+import color_keys from "../../../mock/json/color_keys.json"
 import axios from "axios";
 export default {
   name: "dataBrowser",
@@ -90,7 +90,7 @@ export default {
       colorByOptions:[],
       geneOptions:[],
       datasetParams:{//存储页面初始默认展示的参数
-        "atlas": "Adult",
+        "atlas": "Airway",
         "region": "all"//Tumour_Pons_umap
       },
       sliceGeneOptions:[],
@@ -181,29 +181,37 @@ export default {
       this.getLoadData(params, this.colorBy, this.geneFeatures)
     },
     async getLoadData(params, chartType, geneVal) {
-      //let jsonDataModule1 = await import(`../../../mock/BCAWebJson/json/${params['atlas']}_${params['region'].trim()}_umap.json`);
-      let res = await axios.get(`${apiBaseUrl}/json/${params['atlas']}_${params['region']}_umap.json`)
-      console.log(166, `/json/${params['atlas']}_${params['region']}_umap.json`, res.data)
-      let xyJsonData = res.data; // 提取默认导出的散点图 JSON 数据
+      let jsonDataModule1 = await import(`../../../mock/json/${params['atlas']}_${params['region']}_umap.json`);
+
+      let xyJsonData = jsonDataModule1.default; // 提取默认导出的散点图 JSON 数据
+      // const umapChartData = this.dealUmapData(xyJsonData, chartType, [])
+      // //绘制左边第一个散点图
+      // this.drawUMAPChart(umapChartData, this.$refs.scatterChartRefLeft, "selectedGroupIndex", chartType)
+      // //let jsonDataModule1 = await import(`../../../mock/BCAWebJson/json/${params['atlas']}_${params['region'].trim()}_umap.json`);
+      // let res = await axios.get(`../../../mock/json/${params['atlas']}_${params['region']}_umap.json`)
+      // console.log(166, `../../../mock/json/${params['atlas']}_${params['region']}_umap.json`, res.data)
+      // let xyJsonData = res.data; // 提取默认导出的散点图 JSON 数据
       const umapChartData = this.dealUmapData(xyJsonData, chartType, [])
       //绘制左边第一个散点图
       this.drawUMAPChart(umapChartData, this.$refs.scatterChartRefLeft, "selectedGroupIndex", chartType)
 
       //绘制右边表达量散点图
       if (geneVal) {
-        //let jsonDataModule2 = await import(`/json/gene/${params['atlas']}/${params['region'].trim()}/${geneVal}.json`);
-        const res2 = await axios.get(`${apiBaseUrl}/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
-        console.log(177, `/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
-        let expJsonData = res2.data // 提取默认导出的表达量 JSON 数据
+        let jsonDataModule2 = await import(`../../../mock/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`);
+        // const res2 = await axios.get(`${apiBaseUrl}/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
+        // console.log(177, `/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
+        // let expJsonData = res2.data // 提取默认导出的表达量 JSON 数据
+        let expJsonData = jsonDataModule2.default;
         let expsDataArr = expJsonData.exps.split(',').map(item => Number(item))
         await this.selectUmapGene(geneVal, xyJsonData, 'cell_type', expsDataArr)
       }
 
       //获取gene下拉框的数据
-      //let jsonDataModule3 = await import(`../../../mock/BCAWebJson/json/geneIndex/${params['atlas']}.json`);
-      let geneRes = await axios.get(`${apiBaseUrl}/json/geneIndex/${params['atlas']}.json`)
-      console.log(187, `/json/geneIndex/${params['atlas']}.json`)
-      let geneJsonData = geneRes.data// 提取默认导出的基因 JSON 数据
+      let jsonDataModule3 = await import(`../../../BCAWebJson/json/geneIndex/${params['atlas']}.json`);
+      // let geneRes = await axios.get(`${apiBaseUrl}/json/geneIndex/${params['atlas']}.json`)
+      // console.log(187, `/json/geneIndex/${params['atlas']}.json`)
+      // let geneJsonData = geneRes.data// 提取默认导出的基因 JSON 数据
+      let geneJsonData = jsonDataModule3.default;
       this.sliceGeneOptions = geneJsonData.slice(0, 20)
       this.$set(this, "geneOptions", geneJsonData)
       this.plotLoadingL = false

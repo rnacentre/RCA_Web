@@ -77,7 +77,7 @@ export default {
       // geneFeatures:'A1BG',//存储当前选中的features参数
       geneFeatures:'MAP2',//测试gene1:GAPDH 测试gene2:RPS19
       datasetParams:{//存储页面初始默认展示的参数
-        "atlas": "Adult",
+        "atlas": "Airway",
         "region": "all"
       },
       geneOptions:[],

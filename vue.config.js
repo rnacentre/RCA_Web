@@ -55,7 +55,7 @@ module.exports = {
       },
     },
   },
-  publicPath: '/BCAGitPages',//github仓库名
-  assetsDir: 'BCAGitPages',//同上，否则访问不到静态资源
+  publicPath: '/RCA_Web',//github仓库名
+  assetsDir: 'RCA_Web',//同上，否则访问不到静态资源
   outputDir:"dist",
 };
