@@ -378,23 +378,25 @@ export default {
     },
     //动态获取json数据
     async getLoadData(params,geneVal) {
-      const res1 = await axios.get(`${apiBaseUrl}/json/pie/${params['atlas']}_${params['region']}.json`)
-      console.log(366, `/json/pie/${params['atlas']}_${params['region']}.json`)
-      let jsonData = res1.data; // 提取默认导出的 JSON 数据
+      // const res1 = await axios.get(`${apiBaseUrl}/json/pie/${params['atlas']}_${params['region']}.json`)
+      // console.log(366, `/json/pie/${params['atlas']}_${params['region']}.json`)
+      // let jsonData = res1.data; // 提取默认导出的 JSON 数据
+      let jsonDataModule1 = await import(`../../../mock/json/pie/${params['atlas']}_${params['region'].trim()}.json`);
+      let jsonData = jsonDataModule1.default; // 提取默认导出的 JSON 数据
       await this.dealChartData(jsonData)
 
       //组合箱线图数据
-      let res2 = await axios.get(`${apiBaseUrl}/json/${params['atlas']}_${params['region']}_umap.json`)
-      console.log(373, `/json/${params['atlas']}_${params['region']}_umap.json`)
-      //let jsonDataModule2 = await import(`../../../mock/BCAWebJson/json/${params['atlas']}_${params['region'].trim()}_umap.json`);
-      //let jsonDataModule2 = res2.data; // 提取SON 数据
-      let xyJsonData =res2.data; // 提取默认导出的散点图 JSON 数据
+      // let res2 = await axios.get(`${apiBaseUrl}/json/${params['atlas']}_${params['region']}_umap.json`)
+      // console.log(373, `/json/${params['atlas']}_${params['region']}_umap.json`)
+      let jsonDataModule2 = await import(`../../../mock/json/${params['atlas']}_${params['region']}_umap.json`);
+      let xyJsonData = jsonDataModule2.default; // 提取SON 数据
+      // let xyJsonData =res2.data; // 提取默认导出的散点图 JSON 数据
 
       if(geneVal){
-        res2 = await axios.get(`${apiBaseUrl}/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
-        //let jsonDataModule2 =  await import(`../../../mock/BCAWebJson/json/gene/Fetal/Pons/${geneVal}.json`);
-        //let jsonDataModule2 =  res2.data; // 提取SON 数据
-        let jsonData2 = res2.data; // 提取默认导出的 JSON 数据
+        // res2 = await axios.get(`${apiBaseUrl}/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`)
+        let jsonDataModule2 =  await import(`../../../mock/json/gene/${params['atlas']}/${params['region']}/${geneVal}.json`);
+        let jsonData2 =  jsonDataModule2.default; // 提取SON 数据
+        // let jsonData2 = res2.data; // 提取默认导出的 JSON 数据
         let cellType = []
         for (let i = 0; i <xyJsonData.length ; i++) {
           cellType.push(xyJsonData[i]['cell_type'])
@@ -405,11 +407,11 @@ export default {
       }
 
       //获取gene下拉框的数据
-      const res3 = await axios.get(`${apiBaseUrl}/json/geneIndex/${params['atlas']}.json`)
-      console.log(395, `/json/geneIndex/${params['atlas']}.json`)
-      //let jsonDataModule3 = await import(`../../../mock/BCAWebJson/json/geneIndex/${params['atlas']}.json`);
-      //let jsonDataModule3 = res3.data; // 提取SON 数据
-      let geneJsonData = res3.data// 提取默认导出的基因 JSON 数据
+      // const res3 = await axios.get(`${apiBaseUrl}/json/geneIndex/${params['atlas']}.json`)
+      // console.log(395, `/json/geneIndex/${params['atlas']}.json`)
+      let jsonDataModule3 = await import(`../../../mock/json/geneIndex/${params['atlas']}.json`);
+      let geneJsonData = jsonDataModule3.default; // 提取SON 数据
+      // let geneJsonData = res3.data// 提取默认导出的基因 JSON 数据
       this.sliceGeneOptions = geneJsonData.slice(0,20)
       this.$set(this,"geneOptions",geneJsonData)
     },

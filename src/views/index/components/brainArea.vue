@@ -1,105 +1,120 @@
 <template>
   <div class="brain-wrap" ref="brainwrap">
-    <img src="@/assets/brain/dark/brain-bg.png" alt="" height="100%" class="img-bg">
-    <img src="@/assets/brain/brain-wrap.png" usemap="#Map" id="imgMap" />
+    <!-- <img src="@/assets/brain/dark/brain-bg.png" alt="" height="100%" class="img-bg"> -->
+    <img src="@/assets/lung/线.png" usemap="#Map" id="imgMap" />
     <map name="Map" id="Map">
-      <area @click="linkTo('Medulla oblongata')" @mouseover="update('Brainstem','Medulla oblongata')" title="Medulla oblongata" coords="697,908,696,934,654,1049,773,1071,798,975,815,945" shape="poly">
-      <area @click="linkTo('Midbrain')" @mouseover="update('Brainstem','Midbrain')" title="Midbrain" coords="760,633,735,639,739,683,792,743,873,798,876,742,817,704" shape="poly">
-      <area @click="linkTo('Pons')" @mouseover="update('Brainstem','Pons')" title="Pons" coords="739,679,738,729,680,756,644,751,638,788,702,805,708,841,699,911,815,945,840,905,850,827,878,801,811,753" shape="poly">
-      <area @click="linkTo('Cerebellum')" @mouseover="update('Cerebellum')" title="Cerebellum" coords="722,751,742,729,746,689,699,611,627,583,522,634,458,703,411,763,413,849,461,905,520,911,543,908,587,947,665,964,700,928,716,871,714,799,727,802,733,776" shape="poly">
-      <area @click="linkTo('Cingulate cortex')" @mouseover="update('Limbic system','Cingulate cortex')" title="Cingulate cortex" coords="669,536,711,521,747,540,761,473,840,401,987,365,1120,370,1224,392,1226,376,1322,415,1369,477,1364,519,1336,549,1304,560,1268,558,1316,580,1371,575,1408,535,1423,479,1402,410,1316,351,1207,325,1181,333,1167,316,1116,316,1055,294,1021,306,988,291,909,283,879,294,836,289,820,299,770,308,696,364,671,470" shape="poly">
-      <area @click="linkTo('Frontal lobe')" @mouseover="update('Cerebral cortex','Frontal lobe')" title="Frontal lobe" coords="1318,354,1341,258,1470,345,1531,452,1422,482,1394,410,1423,494,1399,541,1350,577,1296,569,1207,533,1162,547,1159,577,1189,623,1249,651,1307,667,1363,662,1411,650,1440,651,1450,658,1433,675,1381,672,1339,672,1293,676,1201,665,1131,707,1170,751,1232,807,1296,771,1372,745,1442,709,1486,667,1528,641,1440,620,1399,608,1360,585,1388,550,1413,515,1413,434" shape="poly">
-      <area @click="linkTo('Motor cortex')" @mouseover="update('Cerebral cortex','Motor cortex')" title="Motor cortex" coords="1147,197,1189,345,1245,379,1274,384,1353,263,1283,238,1212,197" shape="poly">
-      <area @click="linkTo('Occipital lobe')" @mouseover="update('Cerebral cortex','Occipital lobe')" title="Occipital lobe" coords="445,718,529,637,627,589,652,588,657,549,674,530,655,443,604,365,509,285,433,327,396,406,361,445,361,471,341,594,368,661,400,698" shape="poly">
-      <area @click="linkTo('Parietal lobe')" @mouseover="update('Cerebral cortex','Parietal lobe')" title="Parietal lobe" coords="1021,179,1044,236,1069,297,1070,306,1018,316,910,292,823,302,755,319,728,344,700,410,677,484,679,522,669,543,658,552,627,521,613,435,557,390,525,350,492,299,570,250,652,207,750,176,875,163,912,176,968,166" shape="poly">
-      <area @click="linkTo('Prefrontal cortex')" @mouseover="update('Cerebral cortex','Prefrontal cortex','Frontal lobe')" title="Prefrontal cortex" coords="1377,484,1375,526,1346,555,1378,613,1439,648,1507,658,1545,619,1542,536,1551,493,1529,462" shape="poly">
-      <area @click="linkTo('Somatosensory cortex')" @mouseover="update('Cerebral cortex','Somatosensory cortex','Parietal lobe')" title="Somatosensory cortex" coords="1004,169,1021,291,1032,302,1067,297,1120,319,1148,319,1195,336,1159,199,1122,183" shape="poly">
-      <area @click="linkTo('Temporal lobe')" @mouseover="update('Cerebral cortex','Temporal lobe')" title="Temporal lobe" coords="875,770,867,805,843,821,836,920,895,924,949,914,1016,920,1066,894,1108,894,1154,871,1204,868,1237,835,1237,788,1196,726,1144,689,1092,712,1033,731,1004,776,979,776,940,801,903,788" shape="poly">
-      <area @click="linkTo('Corpus callosum')" @mouseover="update('Corpus callosum')" title="Corpus callosum" coords="775,546,806,536,837,484,921,426,1016,410,1123,417,1220,446,1224,474,1167,487,1139,504,1145,521,1181,508,1257,521,1308,518,1332,491,1332,449,1265,403,1144,364,1000,354,845,389,763,462,739,512,753,533" shape="poly">
-      <area @click="linkTo('Amygdala')" @mouseover="update('Limbic system','Amygdala')" title="Amygdala" coords="990,661,987,700,1016,734,1063,739,1102,711,1106,672,1078,642,1019,641" shape="poly">
-      <area @click="linkTo('Basal ganglia')" @mouseover="update('Limbic system','Basal ganglia')" title="Basal ganglia" coords="859,687,789,639,773,555,820,466,926,404,1046,396,1130,431,1154,474,1151,515,1128,538,1139,485,1098,437,1066,431,1046,465,980,462,899,496,862,552,815,529,805,616" shape="poly">
-      <area @click="linkTo('Hippocampus')" @mouseover="update('Limbic system','Hippocampus')" title="Hippocampus" coords="722,544,705,572,722,614,760,639,797,681,845,723,875,745,879,787,932,813,982,798,1019,782,1070,690,1078,645,1052,653,1002,718,931,725,833,653,783,578,750,549" shape="poly">
-      <area @click="linkTo('Hypothalamus')" @mouseover="update('Limbic system','Hypothalamus')" title="Hypothalamus" coords="1122,543,1095,620,1144,644,1144,623,1136,597,1153,586,1137,547,1145,516,1130,499,1108,524" shape="poly">
-      <area @click="linkTo('Olfactory bulb')" @mouseover="update('Limbic system','Olfactory bulb')" title="Olfactory bulb" coords="1371,669,1434,678,1456,664,1433,647" shape="poly">
-      <area @click="linkTo('Pineal gland')" @mouseover="update('Limbic system','Pineal gland')" title="Pineal gland" coords="744,540,777,574,777,547,756,536,747,526" shape="poly">
-      <area @click="linkTo('Pituitary gland')" @mouseover="update('Limbic system','Pituitary gland')" title="Pituitary gland" coords="1116,631,1131,644,1134,681,1151,695,1168,689,1182,673,1153,648,1139,622,1125,616" shape="poly">
-      <area @click="linkTo('Putamen')" @mouseover="update('Limbic system','Putamen')" title="Putamen" coords="983,459,910,491,861,536,856,581,893,611,940,606,1005,575,1052,533,1070,496,1039,460" shape="poly">
-      <area @click="linkTo('Thalamus')" @mouseover="update('Limbic system','Thalamus')" title="Thalamus" coords="833,578,847,631,901,658,966,648,1044,586,1061,608,1072,600,1058,571,1089,536,1088,473,1030,442,915,456,854,510" shape="poly">
-      <area @click="linkTo('Spinal cord')" @mouseover="update('Spinal cord')" title="Spinal cord" coords="655,1048,615,1157,691,1189,764,1194,773,1074" shape="poly">
+      <!-- Nose -->
+      <area @click="linkTo('Nasal cavity', 'Nose and pharynx')" @mouseover="update('Nose', 'Nasal cavity')" title="Nasal cavity"
+        coords="2788,1397,2751,1344,2587,1334,2514,1340,2380,1519,2469,1519,2525,1553,2793,1564" shape="poly">
+      <area @click="linkTo('Nostrils', 'Nose and pharynx')" @mouseover="update('Nose', 'Nostrils')" title="Nostrils"
+        coords="2492,1566,2413,1533,2413,1588" shape="poly">
+
+      <!-- Pharynx -->
+      <area @click="linkTo('Nasal pharynx', 'Nose and pharynx')" @mouseover="update('Pharynx', 'Nasal pharynx')" title="Nasal pharynx"
+        coords="2816,1441,2872,1474,2939,1497,2994,1642,2860,1631,2793,1564" shape="poly">
+      <area @click="linkTo('Oropharynx', 'Nose and pharynx')" @mouseover="update('Pharynx', 'Oropharynx')" title="Oropharynx"
+        coords="2793,1671,2838,1738,2983,1716,2983,1649,2849,1638" shape="poly">
+      <area @click="linkTo('Hypopharynx', 'Nose and pharynx')" @mouseover="update('Pharynx', 'Hypopharynx')" title="Hypopharynx"
+        coords="3127,2169,3095,2185,3005,1904,2958,1861,2931,1782,2883,1824,2836,1803,2857,1750,2984,1739" shape="poly">
+
+      <!-- Airway -->
+      <area @click="linkTo('Trachea', 'Airway')" @mouseover="update('Airway', 'Trachea')" title="Trachea"
+        coords="3006,2748,3106,2748,3095,2212,2994,2223" shape="poly">
+      <area @click="linkTo('Primary bronchus', 'Airway')" @mouseover="update('Airway', 'Primary bronchus')"
+        title="Primary bronchus" coords="2994,2764,2950,2808,2961,2875,3017,2819,3095,2831,3207,2898,3251,2831,3117,2764" shape="poly">
+      <area @click="linkTo('Bronchi', 'Airway')" @mouseover="update('Airway', 'Bronchi')" title="Bronchi"
+        coords="3240,2848,3296,2804,3307,2737,3363,2759,3419,2837,3441,2904,3408,3005,3508,3150,3430,3172,3341,3116,3240,3005" shape="poly">
+
+      <!-- Lung -->
+      <area @click="linkTo('all', 'Lung')" @mouseover="update('Lung')" title="Lung"
+        coords="2849,2399,2626,2690,2503,2969,2436,3461,2469,3505,2682,3416,2950,3315,2994,3215,2972,3025,3006,2902,2916,2846,2894,2734,2961,2701,2961,2545,2916,2411" shape="poly">
+      <area @click="linkTo('Bronchioles', 'Lung')" @mouseover="update('Lung', 'Bronchioles')" title="Bronchioles"
+        coords="3263,2721,3330,2710,3397,2755,3430,2833,3453,2911,3441,2978,3475,3056,3520,3146,3441,3179,3229,3034,3263,3112,3341,3168,3520,3235,3587,3235,3531,3079,3497,2799,3397,2676,3307,2554,3240,2609,3196,2676" shape="poly">
+      <area @click="linkTo('Alveoli', 'Lung')" @mouseover="update('Lung', 'Alveoli')" title="Alveoli" coords="3184,2699,3207,2598,3251,2542,3318,2531,3385,2576,3419,2654,3453,2732,3520,2777,3531,2855,3542,2933,3542,3034,3587,3123,3609,3190,3620,3257,3553,3268,3453,3235,3363,3213,3296,3146,3229,3101,3218,3179,3263,3246,3330,3313,3397,3324,3475,3347,3564,3369,3631,3358,3687,3302,3676,3190,3631,3045,3620,2944,3587,2822,3542,2676,3464,2576,3385,2486,3229,2419,3151,2565"
+        shape="poly">
     </map>
-    <img src="@/assets/brain/line.png" alt="" class="brain-img line">
-    <div v-if="!activeBrain&&!activeLabel">
-      <img src="@/assets/brain/light/brain.png" alt="" class="brain-img" />
+    <!-- <img src="@/assets/brain/line.png" alt="" class="organ-img line"> -->
+    <div v-if="!activeBrain && !activeLabel">
+      <img src="@/assets/lung/全景图.png" alt="" class="organ-img" />
     </div>
-    <div class="cerebral-cortex">
-      <img v-show="activeBrain=='Cerebral cortex'&&activePart(null)" src="@/assets/brain/Cerebral cortex/Cerebral cortex（组1).png" alt="" class="brain-img">
-      <img v-show="activePart('Cingulate cortex')" src="@/assets/brain/Cerebral cortex/Cingulate.png" alt="" class="brain-img">
-      <img v-show="activePart('Frontal lobe')" src="@/assets/brain/Cerebral cortex/Frontal lobe.png" alt="" class="brain-img">
-      <img v-show="activePart('Motor cortex')" src="@/assets/brain/Cerebral cortex/Motor Cortex.png" alt="" class="brain-img">
-      <img v-show="activePart('Parietal lobe')" src="@/assets/brain/Cerebral cortex/Parietal lobe.png" alt="" class="brain-img">
-      <img v-show="activePart('Occipital lobe')" src="@/assets/brain/Cerebral cortex/Occipital lobe.png" alt="" class="brain-img">
-      <img v-show="activePart('Temporal lobe')" src="@/assets/brain/Cerebral cortex/Temporal lobe.png" alt="" class="brain-img">
-      <img v-show="activePart('Prefrontal cortex')" src="@/assets/brain/Cerebral cortex/Prefrontal Cortex.png" alt="" class="brain-img">
-      <img v-show="activePart('Somatosensory cortex')" src="@/assets/brain/Cerebral cortex/Somatosensory cortex.png" alt="" class="brain-img">
+    <!-- 各个器官独立的图层 -->
+    <div class="Nose">
+      <!-- 鼻部全图层 -->
+      <img v-show="activeBrain == 'Nose'&&activePart(null)" src="@/assets/lung/全景图.png" alt="Nose" class="organ-img">
+      <!-- 独立器官图层 -->
+      <img v-show="activePart('Nasal cavity')" src="@/assets/lung/nasal cavity.png" alt="Nasal cavity"
+        class="organ-img">
+      <img v-show="activePart('Nostrils')" src="@/assets/lung/nostrils.png" alt="Nostrils" class="organ-img">
     </div>
-    <div class="brainstem">
-      <img v-show="activeBrain=='Brainstem'&&activePart(null)" src="@/assets/brain/Brainstem/Brainstem（组3）.png" alt="" class="brain-img">
-      <img v-show="activePart('Medulla oblongata')" src="@/assets/brain/Brainstem/Medulla oblongata.png" alt="" class="brain-img">
-      <img v-show="activePart('Midbrain')" src="@/assets/brain/Brainstem/Midbrain.png" alt="" class="brain-img">
-      <img v-show="activePart('Pons')" src="@/assets/brain/Brainstem/Pones.png" alt="" class="brain-img">
+
+    <div class="Pharynx">
+      <!-- 喉部全图层 -->
+      <img v-show="activeBrain == 'Pharynx'&&activePart(null)" src="@/assets/lung/全景图.png" alt="Pharynx" class="organ-img">
+      <!-- 独立器官图层 -->
+      <img v-show="activePart('Nasal pharynx')" src="@/assets/lung/nasal pharynx.png" alt="Nasal pharynx" class="organ-img">
+      <img v-show="activePart('Oropharynx')" src="@/assets/lung/oropharynx.png" alt="Oropharynx" class="organ-img">
+      <img v-show="activePart('Hypopharynx')" src="@/assets/lung/hypopharynx.png" alt="Hypopharynx" class="organ-img">
     </div>
-    <div class="Cerebellum" v-if="activeBrain=='Cerebellum'">
-      <img src="@/assets/brain/cerebellum/Cerebellum（组2）.png" alt="" class="brain-img">
+
+    <div class="Airway">
+      <!-- 气道全图层 -->
+      <img v-show="activeBrain == 'Airway'&&activePart(null)" src="@/assets/lung/全景图.png" alt="Airway" class="organ-img">
+      <!-- 独立器官图层 -->
+      <img v-show="activePart('Trachea')" src="@/assets/lung/trachea.png" alt="Trachea" class="organ-img">
+      <img v-show="activePart('Primary bronchus')" src="@/assets/lung/primary bronchus.png" alt="Primary bronchus" class="organ-img">
+      <img v-show="activePart('Bronchi')" src="@/assets/lung/bronchi.png" alt="Bronchi" class="organ-img">
     </div>
-    <div class="corpus" v-if="activeBrain=='Corpus callosum'">
-      <img src="@/assets/brain/Corpus callosum/Corpus callosum（组6）.png" alt="" class="brain-img">
+
+    <div class="Lung">
+      <!-- 肺部全图层 -->
+      <img v-show="activeBrain == 'Lung'&&activePart(null)" src="@/assets/lung/lung.png" alt="Lung" class="organ-img">
+      <!-- 独立器官图层 -->
+      <img v-show="activePart('Bronchioles')" src="@/assets/lung/bronchioles.png" alt="Bronchioles"
+        class="organ-img">
+      <img v-show="activePart('Alveoli')" src="@/assets/lung/alveoli.png" alt="Alveoli" class="organ-img">
     </div>
-    <div class="Deepstructures">
-      <img v-show="activeBrain=='Limbic system'&&activePart(null)" src="@/assets/brain/deep structures/Deep structures（组4）.png" alt="" class="brain-img">
-      <img v-show="activePart('Amygdala')" src="@/assets/brain/deep structures/Amygdala.png" alt="" class="brain-img">
-      <img v-show="activePart('Basal ganglia')" src="@/assets/brain/deep structures/Basal ganglia.png" alt="" class="brain-img">
-      <img v-show="activePart('Hippocampus')" src="@/assets/brain/deep structures/Hippocambus.png" alt="" class="brain-img">
-      <img v-show="activePart('Hypothalamus')" src="@/assets/brain/deep structures/Hypothalamus.png" alt="" class="brain-img">
-      <img v-show="activePart('Olfactory bulb')" src="@/assets/brain/deep structures/Olfactory bulb.png" alt="" class="brain-img">
-      <img v-show="activePart('Pineal gland')" src="@/assets/brain/deep structures/Pineal gland.png" alt="" class="brain-img">
-      <img v-show="activePart('Pituitary gland')" src="@/assets/brain/deep structures/Pituitary gland.png" alt="" class="brain-img">
-      <img v-show="activePart('Putamen')" src="@/assets/brain/deep structures/putamen.png" alt="" class="brain-img">
-      <img v-show="activePart('Thalamus')" src="@/assets/brain/deep structures/Thalamus.png" alt="" class="brain-img">
-    </div>
-    <div class="Spinal" v-if="activeBrain=='Spinal cord'">
-      <img src="@/assets/brain/Spinal cord/Spinal cord（组5).png" alt="" class="brain-img">
-    </div>
-    <ul class="brain-nav">
-      <li class="nav" id="nav_1" @click="linkTo('Brainstem')" @mouseover="update('Brainstem')" :class="activeBrain=='Brainstem' ? 'actived ' : ''">Brainstem</li>
-      <li class="nav" id="nav_2" @click="linkTo('Limbic system')" @mouseover="update('Limbic system')" :class="activeBrain=='Limbic system' ? 'actived ' : ''">Limbic system</li>
-      <li class="nav" id="nav_3" @click="linkTo('Cerebral cortex')" @mouseover="update('Cerebral cortex')" :class="activeBrain=='Cerebral cortex' ? 'actived ' : ''">Cerebral cortex</li>
-      <li class="nav" id="nav_4" @click="linkTo('Corpus callosum')" @mouseover="update('Corpus callosum')" :class="activeBrain=='Corpus callosum' ? 'actived ' : ''">Corpus callosum</li>
-      <li class="nav" id="nav_5" @click="linkTo('Cerebellum')" @mouseover="update('Cerebellum')" :class="activeBrain=='Cerebellum' ? 'actived ' : ''">Cerebellum</li>
-      <li class="nav" id="nav_6" @click="linkTo('Spinal cord')" @mouseover="update('Spinal cord')" :class="activeBrain=='Spinal cord' ? 'actived ' : ''">Spinal cord</li>
+    
+    <ul class="lung-nav">
+      <li class="nav" id="nav_1" @click="linkTo('Nose')" @mouseover="update('Nose')"
+        :class="activeBrain == 'Nose' ? 'actived' : ''">Nose</li>
+      <li class="nav" id="nav_2" @click="linkTo('Pharynx')" @mouseover="update('Pharynx')"
+        :class="activeBrain == 'Pharynx' ? 'actived' : ''">Pharynx</li>
+      <li class="nav" id="nav_3" @click="linkTo('Airway')" @mouseover="update('Airway')"
+        :class="activeBrain == 'Airway' ? 'actived' : ''">Airway</li>
+      <li class="nav" id="nav_4" @click="linkTo('Lung')" @mouseover="update('Lung')"
+        :class="activeBrain == 'Lung' ? 'actived' : ''">Lung</li>
     </ul>
-    <div class="nav-list cerebral-list">
-      <ul class="brain-nav cerebral-nav">
-        <li v-for="(item,index) in cerebralNav" :key="item" :class="(`nav_3_${index}`)+' '+ (activedLabel(item,activedMLabel) ? 'actived ' : '')" @click="linkTo(item)" @mouseover="update('Cerebral cortex',item)">{{item}}</li>
+
+    <!-- Sub-navigation for specific organs if needed -->
+    <div class="nav-list nose-list">
+      <ul class="lung-nav nose-nav">
+        <li v-for="(item, index) in noseNav" :key="item"
+          :class="(`nav_1_${index}`) + ' ' + (activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)"
+          @mouseover="update('Nose', item)">{{ item }}</li>
       </ul>
     </div>
-    <div class="nav-list frontal-list">
-      <ul class="brain-nav frontal-nav">
-        <li v-for="(item,index) in frontalNav" :key="item" :class="(`nav_31_${index}`)+' '+ (activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)" @mouseover="update('Cerebral cortex',item,'Frontal lobe')">{{item}}</li>
+
+    <div class="nav-list pharynx-list">
+      <ul class="lung-nav pharynx-nav">
+        <li v-for="(item, index) in pharynxNav" :key="item"
+          :class="(`nav_2_${index}`) + ' ' + (activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)"
+          @mouseover="update('Pharynx', item)">{{ item }}</li>
       </ul>
     </div>
-    <div class="nav-list prefrontal-list">
-      <ul class="brain-nav prefrontal-nav">
-        <li class="nav_32_0" :class="activedLabel('Somatosensory cortex') ? 'actived ' : ''" @click="linkTo('Somatosensory cortex')" @mouseover="update('Cerebral cortex','Somatosensory cortex','Parietal lobe')">Somatosensory cortex</li>
+
+    <div class="nav-list airway-list">
+      <ul class="lung-nav airway-nav">
+        <li v-for="(item, index) in airwayNav" :key="item"
+          :class="(`nav_3_${index}`) + ' ' + (activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)"
+          @mouseover="update('Airway', item)">{{ item }}</li>
       </ul>
     </div>
-    <div class="nav-list deep-list">
-      <ul class="brain-nav deep-nav">
-        <li v-for="(item,index) in deepNav" :key="item" :class="(`nav_2_${index}`)+' '+(activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)" @mouseover="update('Limbic system',item)">{{item}}</li>
-      </ul>
-    </div>
-    <div class="nav-list brainstem-list">
-      <ul class="brain-nav brainstem-nav">
-        <li v-for="(item,index) in brainstemNav" :key="item" :class="(`nav_1_${index}`)+' '+(activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)" @mouseover="update('Brainstem',item)">{{item}}</li>
+
+    <div class="nav-list lungsub-list">
+      <ul class="lung-nav lungsub-nav">
+        <li v-for="(item, index) in lungSubNav" :key="item"
+          :class="(`nav_4_${index}`) + ' ' + (activedLabel(item) ? 'actived ' : '')" @click="linkTo(item)"
+          @mouseover="update('Lung', item)">{{ item }}</li>
       </ul>
     </div>
   </div>
@@ -113,10 +128,10 @@ export default {
       activeBrain: null,
       activeLabel: null,
       activedMLabel: null,
-      brainstemNav: ['Midbrain', 'Pons', 'Medulla oblongata'],
-      deepNav: ['Amygdala', 'Basal ganglia', 'Hippocampus', 'Hypothalamus', 'Olfactory bulb', 'Pineal gland', 'Pituitary gland', 'Putamen', 'Thalamus', 'Cingulate cortex'],
-      cerebralNav: ['Frontal lobe', 'Occipital lobe', 'Parietal lobe', 'Temporal lobe'],
-      frontalNav: ['Prefrontal cortex', 'Motor cortex']
+      noseNav: ['Nasal cavity', 'Nostrils'],
+      pharynxNav: ['Nasal pharynx', 'Oropharynx', 'Hypopharynx'],
+      airwayNav: ['Trachea', 'Primary bronchus', 'Bronchi'],
+      lungSubNav: ['Bronchioles', 'Alveoli']
     };
   },
   computed: {
@@ -199,22 +214,25 @@ export default {
   position: relative;
   z-index: 2;
   width: 1000px;
-  transform: scale(0.7);
+  transform: scale(0.9);
   height: 700px;
   margin: 0 auto;
   transition: all 0.3s;
+
   #imgMap,
   .img-bg,
-  .brain-img {
+  .organ-img {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 0;
     height: 100%;
   }
+
   .line {
     z-index: 99;
   }
+
   #imgMap {
     z-index: 333;
   }
@@ -222,46 +240,50 @@ export default {
   area {
     cursor: pointer;
   }
+
   .nav-list {
     position: absolute;
     z-index: 999;
-    &.cerebral-list {
-      top: 6px;
-      left: 988px;
+
+    &.nose-list {
+      top: 150px;
+      left: 179px;
     }
-    &.frontal-list {
-      top: -30px;
-      left: 1208px;
+
+    &.pharynx-list {
+      top: 220px;
+      left: 594px;
     }
-    &.prefrontal-list {
-      top: 156px;
-      left: 1208px;
+
+    &.airway-list {
+      top: 420px;
+      left: 690px;
     }
-    &.brainstem-list {
-      bottom: 17px;
-      left: 742px;
-    }
-    &.deep-list {
-      top: 18px;
-      left: -210px;
+
+    &.lungsub-list {
+      top: 420px;
+      left: 690px;
     }
   }
-  .brain-nav {
+
+  .lung-nav {
     width: 100%;
+
     li {
       position: absolute;
       z-index: 999;
-      font-size: 14px;
+      font-size: 12px;
       background: #eff5ff;
       color: #406b9b;
       cursor: pointer;
-      padding: 10px 0px;
+      padding: 3px 4px;
       border-radius: 4px;
-      min-width: 140px;
+      min-width: 80px;
       text-align: center;
       border: 1px solid #d9e1f1;
       font-weight: bold;
       line-height: 1.2em;
+
       &:hover,
       &.actived {
         background: #3a5c93;
@@ -269,149 +291,123 @@ export default {
       }
 
       &#nav_1 {
-        left: 606px;
-        top: 547px;
+        left: 125px;
+        top: 234px;
       }
-      &#nav_2 {
-        left: 30px;
-        top: 223px;
-      }
-      &#nav_3 {
-        left: 846px;
-        top: 145px;
-      }
-      &#nav_4 {
-        left: 318px;
-        top: 10px;
-      }
-      &#nav_5 {
-        left: 70px;
-        top: 486px;
-      }
-      &#nav_6 {
-        left: 480px;
-        top: 658px;
-      }
-    }
-    &.cerebral-nav {
-      background: url("~@/assets/brain/dark/Cerebral cortex（线）.png") left
-        no-repeat;
-      background-size: auto 90%;
-      min-width: 256px;
-      height: 320px;
 
-      position: relative;
-      li {
-        left: 82px;
-        &.nav_3_0 {
-          top: 0px;
-        }
-        &.nav_3_1 {
-          top: 88px;
-        }
-        &.nav_3_2 {
-          top: 189px;
-        }
-        &.nav_3_3 {
-          top: 283px;
-        }
-        // &.nav_3_4 {
-        //   top: 286px;
-        // }
+      &#nav_2 {
+        left: 731px;
+        top: 271px;
+      }
+
+      &#nav_3 {
+        left: 912px;
+        top: 451px;
+      }
+
+      &#nav_4 {
+        left: 912px;
+        top: 520px;
       }
     }
-    &.frontal-nav {
-      background: url("~@/assets/brain/dark/Parietal lobe-Motor cortex.png")
-        left no-repeat;
-      background-size: auto 70%;
-      min-width: 200px;
-      height: 120px;
-      position: relative;
-      li {
-        left: 70px;
-        &.nav_31_0 {
-          top: 0px;
-        }
-        &.nav_31_1 {
-          top: 75px;
-        }
-      }
-    }
-    &.prefrontal-nav {
-      background: url("~@/assets/brain/dark/Somatosensory.png") left center
-        no-repeat;
-      min-width: 200px;
-      height: 120px;
-      position: relative;
-      li {
-        left: 60px;
-        padding: 4px 0px;
-        &.nav_32_0 {
-          top: 35px;
-        }
-      }
-    }
-    &.brainstem-nav {
-      background: url("~@/assets/brain/dark/Brainstem（线）.png") left no-repeat;
+
+    &.nose-nav {
+      // background: url("~@/assets/brain/dark/Brainstem（线）.png") left no-repeat;
       background-size: auto 70%;
       width: 140px;
-      height: 230px;
+      height: 0px;
       // left: 638px;
       // top: -360px;
       position: relative;
+
       li {
         left: 60px;
+
         &.nav_1_0 {
-          top: 22px;
+          top: 68px;
         }
+
         &.nav_1_1 {
-          top: 96px;
+          top: 99px;
         }
+
         &.nav_1_2 {
           top: 170px;
         }
       }
     }
-    &.deep-nav {
-      background: url("~@/assets/brain/dark/deep structures（线）.png") right
-        no-repeat;
+
+    &.pharynx-nav {
+      // background: url("~@/assets/brain/dark/deep structures（线）.png") right no-repeat;
       background-size: auto 100%;
-      width: 240px;
-      height: 450px;
+      width: 130px;
+      height: 0px;
       // top: -146px;
       // left: 844px;
       position: relative;
+
       li {
         left: 10px;
+
         &.nav_2_0 {
-          top: -22px;
+          top: 19px;
         }
+
         &.nav_2_1 {
-          top: 26px;
+          top: 50px;
         }
+
         &.nav_2_2 {
-          top: 75px;
+          top: 81px;
         }
+
         &.nav_2_3 {
           top: 126px;
         }
-        &.nav_2_4 {
-          top: 176px;
+      }
+    }
+
+    &.airway-nav {
+      // background: url("~@/assets/brain/dark/Cerebral cortex（线）.png") left no-repeat;
+      // background-size: auto 90%;
+      min-width: 200px;
+      height: 0px;
+
+      position: relative;
+
+      li {
+        left: 82px;
+
+        &.nav_3_0 {
+          top: 0px;
         }
-        &.nav_2_5 {
-          top: 230px;
+
+        &.nav_3_1 {
+          top: 30px;
         }
-        &.nav_2_6 {
-          top: 284px;
+
+        &.nav_3_2 {
+          top: 60px;
         }
-        &.nav_2_7 {
-          top: 333px;
+      }
+    }
+
+    &.lungsub-nav {
+      // background: url("~@/assets/brain/dark/Somatosensory.png") left center no-repeat;
+      min-width: 130px;
+      height: 0px;
+      position: relative;
+
+      li {
+        left: 82px;
+        // padding: 4px 0px;
+
+        &.nav_4_0 {
+          top: 90px;
         }
-        &.nav_2_8 {
-          top: 382px;
-        }
-        &.nav_2_9 {
-          top: 430px;
+
+        &.nav_4_1 {
+          top: 120px;
         }
       }
     }

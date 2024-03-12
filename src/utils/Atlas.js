@@ -1,34 +1,34 @@
 const ATLAS = [
   {
-    name: "Adult Brain",
-    label: "ADULT BRAIN",
-    className: "adult",
-    img: require("@/assets/img/adult-brain.png"),
+    name: "Nose and pharynx",
+    label: "Nose and pharynx",
+    className: "Nose and pharynx",
+    img: require("@/assets/img/nose-pharynx.png"),
   },
   {
-    name: "Fetal Brain",
-    label: "FETAL BRAIN",
-    className: "fetal",
-    img: require("@/assets/img/fetal-brain.png"),
+    name: "Airway",
+    label: "Airway",
+    className: "Airway",
+    img: require("@/assets/img/airway.png"),
   },
   {
-    name: "Tumour",
-    label: "TUMOUR",
-    className: "tumour",
-    img: require("@/assets/img/tumour-brain.png"),
+    name: "Lung",
+    label: "Lung",
+    className: "Lung",
+    img: require("@/assets/img/lung.png"),
   },
-  {
-    name: "Organoid",
-    label: "ORGANOID",
-    className: "Organoid",
-    img: require("@/assets/img/drganoid-brain.png"),
-  },
-  {
-    name: "Mouse",
-    label: "MOUSE BRAIN",
-    className: "Mouse",
-    img: require("@/assets/img/animal-brain.png"),
-  },
+  // {
+  //   name: "Organoid",
+  //   label: "ORGANOID",
+  //   className: "Organoid",
+  //   img: require("@/assets/img/drganoid-brain.png"),
+  // },
+  // {
+  //   name: "Mouse",
+  //   label: "MOUSE BRAIN",
+  //   className: "Mouse",
+  //   img: require("@/assets/img/animal-brain.png"),
+  // },
 ];
 export default ATLAS;
 export const METHODS = [

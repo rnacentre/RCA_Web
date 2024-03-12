@@ -1,14 +1,14 @@
 <template>
   <div class="wrap">
-    <b-pane label="Anatomical Portrait of the Adult Brain">
-      <p slot="desc">Interactive viewer of the adult brain regions in BrainCellAtlas.</p>
+    <b-pane label="Anatomical Portrait of the Adult Respiratory System">
+      <p slot="desc">Interactive viewer of the adult respiratory system regions in Respire Cell Atlas.</p>
       <div class="brainarea">
         <!-- <div> -->
         <div style="position:absolute;top:0;left:0;bottom:0;right:0;z-index:0" @click="handleOutsideClick"></div>
         <brainArea @brainAreaUpdate="(value) => (careBrain = value)" ref="brain_area" />
         <!-- </div> -->
 
-        <div v-if="careBrain!=''&&careBrain!==null">
+        <!-- <div v-if="careBrain!=''&&careBrain!==null">
           <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item @click.native="$emit('toLast')" style="font-size:18px">
               {{ atlasName }}
@@ -26,11 +26,12 @@
               {{ BrainDetails[careBrain]&&BrainDetails[careBrain].detail||'.' }}
             </span>
           </el-card>
-        </div>
+        </div> -->
       </div>
       <!-- <div v-else style="height: 200px"></div> -->
       <p>
-        {{ `Checkout ${atlasName} in` }}
+        <!-- {{ `Checkout ${atlasName} in` }} -->
+        {{ `Checkout Respiratory System details in` }}
         <router-link :to="`/dataBrowser/${atlasName.split(' ')[0]}`">
           <el-button type="text"> Data viewer </el-button>
         </router-link>
@@ -64,7 +65,7 @@ export default {
     },
     toWiki () {
       if (!this.careBrain || this.careBrain === "") {
-        this.$message.info("Please select a brain part");
+        this.$message.info("Please select a respiratory part");
         return;
       }
       // const url = this.BRAIN_STRUCTURE.has(this.careBrain)
@@ -90,4 +91,4 @@ export default {
 .box-card {
   margin: 20px 0;
 }
-</style>
+</style>./AnatomyArea.vue

@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@antv/g2plot": "^2.4.15",

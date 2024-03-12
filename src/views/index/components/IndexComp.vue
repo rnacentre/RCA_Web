@@ -6,24 +6,24 @@
       <atlasBrains @change="changeAtlas" />
       <div class="atlas-umap" align="center">
         <router-link
-          v-if="atlasName === 'Adult Brain'"
+          v-if="atlasName === 'Nose and pharynx'"
           :to="{ path: '/dataBrowser', query: { region: 'all', atlas: 'Adult' } }"
         >
           <img src="@/assets/umap-img/Adult.png" alt />
         </router-link>
         <router-link
-          v-else-if="atlasName === 'Fetal Brain'"
+          v-else-if="atlasName === 'Airway'"
           :to="{ path: '/dataBrowser', query: { region: 'all', atlas: 'Fetal' } }"
         >
           <img src="@/assets/umap-img/Fetal.png" alt />
         </router-link>
         <router-link
-          v-else-if="atlasName === 'Tumour'"
+          v-else-if="atlasName === 'Lung'"
           :to="{ path: '/dataBrowser', query: { region: 'all', atlas: 'Tumour' } }"
         >
           <img src="@/assets/umap-img/Tumour.png" alt />
         </router-link>
-        <router-link
+        <!-- <router-link
           v-else-if="atlasName === 'Organoid'"
           :to="{ path: '/dataBrowser', query: { region: 'all', atlas: 'Organoid' } }"
         >
@@ -34,8 +34,8 @@
           :to="{ path: '/dataBrowser', query: { region: 'all', atlas: 'Mouse' } }"
         >
           <img src="@/assets/umap-img/Mouse.png" alt />
-        </router-link>
-        <el-empty v-else description="Not available in current version of Brain Cell Atals"></el-empty>
+        </router-link> -->
+        <el-empty v-else description="Not available in current version of Respire Cell Atlas"></el-empty>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ export default {
   data() {
     return {
       ATLAS,
-      atlasName: "Adult Brain"
+      atlasName: "Nose and pharynx"
     };
   },
   methods: {

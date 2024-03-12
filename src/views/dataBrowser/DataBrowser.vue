@@ -207,7 +207,7 @@ export default {
       }
 
       //获取gene下拉框的数据
-      let jsonDataModule3 = await import(`../../../BCAWebJson/json/geneIndex/${params['atlas']}.json`);
+      let jsonDataModule3 = await import(`../../../mock/json/geneIndex/${params['atlas']}.json`);
       // let geneRes = await axios.get(`${apiBaseUrl}/json/geneIndex/${params['atlas']}.json`)
       // console.log(187, `/json/geneIndex/${params['atlas']}.json`)
       // let geneJsonData = geneRes.data// 提取默认导出的基因 JSON 数据

@@ -4,10 +4,10 @@
       <div class="wrap">
         <br><br>
         <br><br>
-        <b-pane-title label="Brain Cell Atlas" center style="color: white;margin-top:0;line-height:1em"></b-pane-title>
+        <b-pane-title label="Respire Cell Atlas" center style="color: white;margin-top:0;line-height:1em"></b-pane-title>
         <!-- <br><br> -->
         <div class="welcome-cont">
-          A comprehensive and unified atlas of the brain that was built across studies, regions, diseases and sequencing platforms.
+          A comprehensive and detailed map of the various cell types present in the respiratory system.
         </div>
         <br><br>
       </div>
@@ -39,36 +39,36 @@ export default {
     return {
       list: [
         {
-          num: 173,
+          num: '100+',
           content: "Studies",
           icon: "img/brain/stats-icon-studies.png",
           uri: '/help#Datasets'
         },
         {
-          num: "26.3M",
+          num: "22M",
           // unit: "M",
           content: "Cells",
           icon: "img/brain/stats-icon-cells.png",
           uri: '/cellSorting'
         },
         {
-          num: '10+',
-          content: "Brain Regions",
+          num: '4+',
+          content: "Tissues",
           icon: "img/brain/stats-icon-brain.png",
           uri: '/portrait/Adult'
         },
         {
-          num: 8,
-          content: "Machine Learning Methods",
+          num: '2150+',
+          content: "Samples",
           icon: "img/brain/stats-icon-machine.png",
           uri: '/gene/marker'
         },
-        {
-          num: 9,
-          content: "Diseases",
-          icon: "img/brain/stats-icon-diseases.png",
-          uri: '/dataSets'
-        },
+        // {
+        //   num: 9,
+        //   content: "Diseases",
+        //   icon: "img/brain/stats-icon-diseases.png",
+        //   uri: '/dataSets'
+        // },
       ],
     };
   },

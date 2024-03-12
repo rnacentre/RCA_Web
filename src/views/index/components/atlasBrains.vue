@@ -1,6 +1,6 @@
 <template>
-  <el-row class="atlas-list" :gutter="110">
-    <el-col class="atlas-col" v-for="item in ATLAS" :key="item.label" @click.native="changeAtlas(item)">
+  <el-row class="atlas-list" :gutter="110" type="flex" justify="space-around">
+    <el-col class="atlas-col" v-for="item in ATLAS" :key="item.label" @click.native="changeAtlas(item)" :span="getColSpan">
       <brain-img-wrap :style="cellGenestyle()" :isGene="isGene" :geneActive="cellClassName(item.name)" ref="brainImgWrap">
         <img :src="item.img" alt="" />
       </brain-img-wrap>
@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       ATLAS,
-      atlasName: "Adult Brain",
+      atlasName: "Nose and pharynx",
     };
   },
   mounted () {
@@ -76,7 +76,7 @@ export default {
       color: #23255f;
       font-size: 18px;
       font-weight: 550;
-      margin-top: 20px;
+      margin-top: -20px;
     }
     img {
       transition: all 0.3s;
