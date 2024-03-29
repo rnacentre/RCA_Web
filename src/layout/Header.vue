@@ -5,8 +5,8 @@
         <span class="header-logo" @click="$router.push({ path: '/index' })">
           <!-- svg图标 -->
           <!-- <svg-icon icon-class="braincellatlaslogo" /> -->
-          <p>RespireCellAtlas</p>
-          <!-- <img src="@/assets/img/braincellatlaslogo.svg" alt="" width="160" height="60"> -->
+          <!-- <p>RespireCellAtlas</p> -->
+          <img src="@/assets/img/respirecellatlaslogo.svg" alt="" width="160" height="50">
         </span>
         <div class="el-menu-block">
           <el-menu mode="horizontal" :default-active="activeIndex" text-color="#333333" active-text-color="#1e5dbc" class="header-menus">
