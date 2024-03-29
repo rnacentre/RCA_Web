@@ -54,13 +54,13 @@ export default {
         {
           num: '4+',
           content: "Tissues",
-          icon: "img/brain/stats-icon-brain.png",
+          icon: "img/brain/stats-icon-tissues.png",
           uri: '/portrait/Adult'
         },
         {
           num: '2150+',
           content: "Samples",
-          icon: "img/brain/stats-icon-machine.png",
+          icon: "img/brain/stats-icon-samples.png",
           uri: '/gene/marker'
         },
         // {
